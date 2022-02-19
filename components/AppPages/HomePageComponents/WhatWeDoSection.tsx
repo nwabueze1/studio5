@@ -13,7 +13,7 @@ import OnlinePrediction from "@mui/icons-material/OnlinePrediction";
 const WhatWeDoSection = () => {
   const GridItem = ({ children }: IAppGridItem) => (
     <>
-      <Grid item xs={12} sm={4} md={3} lg={2} sx={{ mx: IsMobile() ? 7 : "" }}>
+      <Grid item xs={6} sm={4} md={3} lg={2} sx={{ mx: IsMobile() ? 7 : "" }}>
         {children}
       </Grid>
     </>
