@@ -21,7 +21,7 @@ const WhatWeDoSection = () => {
   return (
     <Grid container justifyContent="space-evenly" alignItems="center" gap={2}>
       <GridItem>
-        <div style={{ maxWidth: 200, p: "1px" }}>
+        <div style={{ maxWidth: 200, padding: "1px" }}>
           <Stack
             direction="row"
             alignItems="center"
