@@ -23,6 +23,7 @@ export default function AppDrawer() {
         open={isOpen}
         onClose={() => setIsOpen(false)}
         onOpen={() => setIsOpen(true)}
+        anchor="right"
       >
         <List>
           <AppListItem
