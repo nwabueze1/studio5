@@ -45,7 +45,7 @@ const WhatWeDoSection = () => {
         </div>
       </GridItem>
       <GridItem>
-        <Card sx={{ maxWidth: 200, p: "1px" }}>
+        <div style={{ maxWidth: 200, padding: "1px" }}>
           <Stack
             direction="row"
             alignItems="center"
@@ -66,10 +66,10 @@ const WhatWeDoSection = () => {
             Our Proffesional Camera men will handle your event with ease and
             maximum professionaloity
           </Typography>
-        </Card>
+        </div>
       </GridItem>
       <GridItem>
-        <Card sx={{ maxWidth: 200, p: "1px" }}>
+        <div style={{ maxWidth: 200, padding: "1px" }}>
           <Stack
             direction="row"
             alignItems="center"
@@ -89,10 +89,10 @@ const WhatWeDoSection = () => {
           <Typography variant="body2" component="p" textAlign="center">
             Experience First Class Treatment in Our Studios
           </Typography>
-        </Card>
+        </div>
       </GridItem>
       <GridItem>
-        <Card sx={{ maxWidth: 200, p: "1px" }}>
+        <div style={{ maxWidth: 200, padding: "1px" }}>
           <Stack
             direction="row"
             alignItems="center"
@@ -112,7 +112,7 @@ const WhatWeDoSection = () => {
           <Typography variant="body2" component="p" textAlign="center">
             We Broadcast Your EVents in all Social Media Platforms
           </Typography>
-        </Card>
+        </div>
       </GridItem>
     </Grid>
   );
