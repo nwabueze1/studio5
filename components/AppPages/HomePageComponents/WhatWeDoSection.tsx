@@ -21,7 +21,7 @@ const WhatWeDoSection = () => {
   return (
     <Grid container justifyContent="space-evenly" alignItems="center" gap={2}>
       <GridItem>
-        <Card sx={{ maxWidth: 200, p: "1px" }}>
+        <div style={{ maxWidth: 200, p: "1px" }}>
           <Stack
             direction="row"
             alignItems="center"
@@ -42,7 +42,7 @@ const WhatWeDoSection = () => {
             We give state of the art printing Solution. In the least possible
             time
           </Typography>
-        </Card>
+        </div>
       </GridItem>
       <GridItem>
         <Card sx={{ maxWidth: 200, p: "1px" }}>
