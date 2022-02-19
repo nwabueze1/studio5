@@ -13,7 +13,19 @@ import OnlinePrediction from "@mui/icons-material/OnlinePrediction";
 const WhatWeDoSection = () => {
   const GridItem = ({ children }: IAppGridItem) => (
     <>
-      <Grid item xs={6} sm={4} md={3} lg={2} sx={{ mx: IsMobile() ? 7 : "" }}>
+      <Grid
+        item
+        xs={12}
+        sm={6}
+        md={3}
+        lg={2}
+        sx={{
+          mx: IsMobile() ? 0 : "",
+          border: "1px solid lightgray",
+          borderRadius: "10px",
+          p: 2,
+        }}
+      >
         {children}
       </Grid>
     </>
@@ -21,55 +33,38 @@ const WhatWeDoSection = () => {
   return (
     <Grid container justifyContent="space-evenly" alignItems="center" gap={2}>
       <GridItem>
-        <div style={{ maxWidth: 200, padding: "1px" }}>
-          <Stack
-            direction="row"
-            alignItems="center"
-            spacing={
-              IsMobile() ? UseTheme().spacing(0.1) : UseTheme().spacing(1)
-            }
-          >
-            <Print fontSize="medium" color="success"></Print>
-            <Typography
-              variant={IsMobile() ? "body2" : "h5"}
-              textAlign="center"
-              color="green"
-            >
-              Quality Printing
-            </Typography>
-          </Stack>
-          <Typography variant="body2" component="p" textAlign="center">
-            We give state of the art printing Solution. In the least possible
-            time
+        <Stack
+          direction="row"
+          alignItems="center"
+          spacing={IsMobile() ? UseTheme().spacing(0.1) : UseTheme().spacing(1)}
+        >
+          <Print fontSize="medium"></Print>
+          <Typography variant={IsMobile() ? "body2" : "h5"} textAlign="center">
+            Printing
           </Typography>
-        </div>
+        </Stack>
+        <Typography variant="body2" component="p">
+          We give state of the art printing Solution. In the least possible time
+        </Typography>
       </GridItem>
       <GridItem>
-        <div style={{ maxWidth: 200, padding: "1px" }}>
-          <Stack
-            direction="row"
-            alignItems="center"
-            spacing={
-              IsMobile() ? UseTheme().spacing(0.1) : UseTheme().spacing(1)
-            }
-          >
-            <Camera color="error"></Camera>
-            <Typography
-              variant={IsMobile() ? "body2" : "h5"}
-              textAlign="center"
-              color="error"
-            >
-              Event Coverage
-            </Typography>
-          </Stack>
-          <Typography variant="body2" component="p" textAlign="center">
-            Our Proffesional Camera men will handle your event with ease and
-            maximum professionaloity
+        <Stack
+          direction="row"
+          alignItems="center"
+          spacing={IsMobile() ? UseTheme().spacing(0.1) : UseTheme().spacing(1)}
+        >
+          <Camera></Camera>
+          <Typography variant={IsMobile() ? "body2" : "h5"}>
+            Coverage
           </Typography>
-        </div>
+        </Stack>
+        <Typography variant="body2" component="p">
+          Our Proffesional Camera men will handle your event with ease and
+          maximum professionaloity
+        </Typography>
       </GridItem>
       <GridItem>
-        <div style={{ maxWidth: 200, padding: "1px" }}>
+        <>
           <Stack
             direction="row"
             alignItems="center"
@@ -77,42 +72,32 @@ const WhatWeDoSection = () => {
               IsMobile() ? "useTheme().spacing(0.1)" : UseTheme().spacing(1)
             }
           >
-            <Videocam color="primary"></Videocam>
-            <Typography
-              variant={IsMobile() ? "body2" : "h5"}
-              textAlign="center"
-              color="primary"
-            >
+            <Videocam></Videocam>
+            <Typography variant={IsMobile() ? "body2" : "h5"}>
               Digital Studio
             </Typography>
           </Stack>
-          <Typography variant="body2" component="p" textAlign="center">
+          <Typography variant="body2" component="p">
             Experience First Class Treatment in Our Studios
           </Typography>
-        </div>
+        </>
       </GridItem>
       <GridItem>
-        <div style={{ maxWidth: 200, padding: "1px" }}>
-          <Stack
-            direction="row"
-            alignItems="center"
-            spacing={
-              IsMobile() ? "useTheme().spacing(0.1)" : UseTheme().spacing(1)
-            }
-          >
-            <OnlinePrediction color="success"></OnlinePrediction>
-            <Typography
-              variant={IsMobile() ? "body2" : "h5"}
-              textAlign="center"
-              color="green"
-            >
-              Live Broadcast
-            </Typography>
-          </Stack>
-          <Typography variant="body2" component="p" textAlign="center">
-            We Broadcast Your EVents in all Social Media Platforms
+        <Stack
+          direction="row"
+          alignItems="center"
+          spacing={
+            IsMobile() ? "useTheme().spacing(0.1)" : UseTheme().spacing(1)
+          }
+        >
+          <OnlinePrediction></OnlinePrediction>
+          <Typography variant={IsMobile() ? "body2" : "h5"} textAlign="center">
+            Broadcast
           </Typography>
-        </div>
+        </Stack>
+        <Typography variant="body2" component="p">
+          We Broadcast Your EVents in all Social Media Platforms
+        </Typography>
       </GridItem>
     </Grid>
   );
