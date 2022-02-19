@@ -19,12 +19,7 @@ const WhatWeDoSection = () => {
     </>
   );
   return (
-    <Grid
-      container
-      justifyContent="space-evenly"
-      alignItems="center"
-      gap={UseTheme().spacing(2)}
-    >
+    <Grid container justifyContent="space-evenly" alignItems="center" gap={2}>
       <GridItem>
         <Card sx={{ maxWidth: 200, p: "1px" }}>
           <Stack
