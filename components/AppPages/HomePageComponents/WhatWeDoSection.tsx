@@ -20,7 +20,7 @@ const WhatWeDoSection = () => {
         md={3}
         lg={2}
         sx={{
-          mx: IsMobile() ? 0 : "",
+          mb: 2,
           border: "1px solid lightgray",
           borderRadius: "10px",
           p: 2,
