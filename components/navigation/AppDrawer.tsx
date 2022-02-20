@@ -16,7 +16,9 @@ import { AppBadge } from "./NavItem";
 import Home from "@mui/icons-material/Home";
 export default function AppDrawer() {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
+
   const handleClick = () => setIsOpen(false);
+
   return (
     <>
       <SwipableDrawer
@@ -27,7 +29,7 @@ export default function AppDrawer() {
       >
         <List>
           <ListItem
-            sx={{ backgroundColor: "black", height: "150px" }}
+            sx={{ backgroundColor: "rgba(0,0,0,0.4)", height: "150px" }}
           ></ListItem>
           <AppListItem
             Href={NAVIGATIONLINKS.HOME}
