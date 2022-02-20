@@ -26,6 +26,9 @@ export default function AppDrawer() {
         anchor="right"
       >
         <List>
+          <ListItem
+            sx={{ backgroundColor: "black", height: "150px" }}
+          ></ListItem>
           <AppListItem
             Href={NAVIGATIONLINKS.HOME}
             ListIcon={<Home></Home>}

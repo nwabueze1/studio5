@@ -1,11 +1,12 @@
 import Notifications from "@mui/icons-material/Notifications";
 import Badge from "@mui/material/Badge";
-import Link from "@mui/material/Link";
+
 import Stack from "@mui/material/Stack";
 import React from "react";
 import { useTheme, useMediaQuery, Button } from "@mui/material";
 import { NAVIGATIONLINKS } from "./NavigationLinks";
 import AppDrawer from "./AppDrawer";
+import Link from "next/link";
 
 export default function NavItem() {
   const theme = useTheme();
@@ -21,34 +22,13 @@ export default function NavItem() {
         </Stack>
       ) : (
         <>
-          <Link underline="none" href={NAVIGATIONLINKS.PRINT} color="inherit">
-            Print
-          </Link>
-          <Link
-            underline="none"
-            href={NAVIGATIONLINKS.COVERAGE}
-            color="inherit"
-          >
-            Coverage
-          </Link>
-          <Link
-            underline="none"
-            href={NAVIGATIONLINKS.VIDEOBOOKING}
-            color="inherit"
-          >
-            VideoCoverage
-          </Link>
-          <Link underline="none" href={NAVIGATIONLINKS.BLOG} color="inherit">
-            Blog
-          </Link>
-          <Link underline="none" href={NAVIGATIONLINKS.ACCOUNT} color="inherit">
-            Account
-          </Link>
-          <Link
-            underline="none"
-            href={NAVIGATIONLINKS.NOTIFICATION}
-            color="inherit"
-          >
+          <Link href={NAVIGATIONLINKS.HOME}>Home</Link>
+          <Link href={NAVIGATIONLINKS.PRINT}>Print</Link>
+          <Link href={NAVIGATIONLINKS.COVERAGE}>Coverage</Link>
+          <Link href={NAVIGATIONLINKS.VIDEOBOOKING}>VideoCoverage</Link>
+          <Link href={NAVIGATIONLINKS.BLOG}>Blog</Link>
+          <Link href={NAVIGATIONLINKS.ACCOUNT}>Account</Link>
+          <Link href={NAVIGATIONLINKS.NOTIFICATION}>
             <Badge badgeContent={4} color="error">
               <Notifications></Notifications>
             </Badge>
