@@ -7,6 +7,7 @@ import { useTheme, useMediaQuery, Button } from "@mui/material";
 import { NAVIGATIONLINKS } from "./NavigationLinks";
 import AppDrawer from "./AppDrawer";
 import Link from "next/link";
+import Home from "@mui/icons-material/Home";
 
 export default function NavItem() {
   const theme = useTheme();
@@ -15,9 +16,7 @@ export default function NavItem() {
     <Stack direction={"row"} spacing={isMobile ? "" : 2} color="black">
       {isMobile ? (
         <Stack direction="row">
-          <Button color="error" href={NAVIGATIONLINKS.ACCOUNT}>
-            Account
-          </Button>
+          <Home fontSize="medium" component="a" href="/"></Home>
           <AppDrawer></AppDrawer>
         </Stack>
       ) : (

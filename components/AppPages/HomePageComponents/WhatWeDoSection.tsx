@@ -2,7 +2,6 @@ import React from "react";
 import { IAppGridItem } from "../../footer/AppFooter";
 import { IsMobile, UseTheme } from "./HOOKQUERY";
 import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
 import Stack from "@mui/material/Stack";
 import Print from "@mui/icons-material/Print";
 import Typography from "@mui/material/Typography";

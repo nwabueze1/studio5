@@ -8,20 +8,21 @@ import { IsMobile, UseTheme } from "./HomePageComponents/HOOKQUERY";
 import CareerInModelling from "./HomePageComponents/CareerInModelling";
 import TestMonial from "./HomePageComponents/TestMonial";
 import SuggestionBox from "./HomePageComponents/SuggestionBox";
-export default function HomePage() {
+import TrendingNews, {
+  RoundedHeading,
+} from "./HomePageComponents/TrendingNews";
+import { Blog } from "./HomePageComponents/Home.Service";
+interface Iprop {
+  blog: Blog[];
+}
+export default function HomePage({ blog }: Iprop) {
   return (
     <Box sx={{ p: UseTheme().spacing(3) }}>
       <BannerSection></BannerSection>
-      <Typography
-        variant={IsMobile() ? "h4" : "h2"}
-        fontWeight={"800"}
-        textAlign={IsMobile() ? "center" : "left"}
-        color="navy"
-        sx={{ mt: "3rem" }}
-      >
-        What Do We Offer ?
-      </Typography>
+      <RoundedHeading>What Do We Offer ?</RoundedHeading>
+
       <WhatWeDoSection></WhatWeDoSection>
+      <TrendingNews blogs={blog}></TrendingNews>
       <CareerInModelling></CareerInModelling>
       <TestMonial></TestMonial>
 

@@ -1,10 +1,16 @@
 import React from "react";
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import AppFooter from "../components/footer/AppFooter";
 import HomePage from "../components/AppPages/HomePage";
+import {
+  getAllBlog,
+  Blog,
+} from "../components/AppPages/HomePageComponents/Home.Service";
 
-const Home: NextPage = () => {
+const Home: NextPage = ({
+  blogPosts,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head>
@@ -23,9 +29,18 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HomePage></HomePage>
+      <HomePage blog={blogPosts as Blog[]}></HomePage>
     </>
   );
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const blogPosts = getAllBlog();
+  return {
+    props: {
+      blogPosts,
+    },
+  };
+};
