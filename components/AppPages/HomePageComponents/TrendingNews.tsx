@@ -17,7 +17,7 @@ export default function TrendingNews({ blogs }: Iprop) {
       <RoundedHeading>Trending News</RoundedHeading>
       <List sx={{ mt: 0 }}>
         {blogs.map((blog, index) => (
-          <ListItem>
+          <ListItem key={index}>
             <Link href={`/blogs/${blog.id}`}>
               <ListItemText
                 sx={{

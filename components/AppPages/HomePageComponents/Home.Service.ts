@@ -1,4 +1,5 @@
 import { ParsedUrlQuery } from "querystring";
+import { BlogPost, OneBlog } from "../../../pages/blogs/[id]";
 
 export interface Blog {
   id: number | ParsedUrlQuery | undefined | string;
@@ -45,17 +46,20 @@ export interface IgetOneBlog {
   blog: Blog;
   otherBody: string;
 }
-export function getOneBlog(
-  id: string | string[] | undefined
-): IgetOneBlog | string {
+export function getOneBlog(id: string | string[] | undefined): IgetOneBlog {
   const blog = getAllBlog().find((c) => c.id == id);
   if (blog) {
+    const Post = new OneBlog();
+    Post.blog = blog;
+    Post.otherBody =
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores consequuntur nobis eum tempora officiis. Consequatur velit possimus perferendis saepe placeat, dicta temporibus laboriosam similique id quas omnis officia ea reiciendis facere, et enim incidunt corrupti accusamus sapiente? Dolorum quis nemo iure assumenda dignissimos. Voluptatum quibusdam exercitationem velit alias molestias? Aperiam sunt ab illum porro. Libero?";
     return {
-      blog: blog,
-      otherBody:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores consequuntur nobis eum tempora officiis. Consequatur velit possimus perferendis saepe placeat, dicta temporibus laboriosam similique id quas omnis officia ea reiciendis facere, et enim incidunt corrupti accusamus sapiente? Dolorum quis nemo iure assumenda dignissimos. Voluptatum quibusdam exercitationem velit alias molestias? Aperiam sunt ab illum porro. Libero?",
+      blog: Post.blog,
+      otherBody: Post.otherBody,
     };
   }
-  console.log(id);
-  return id?.toString() as string;
+  const Post = new OneBlog();
+  Post.blog = new BlogPost();
+  Post.otherBody = "";
+  return Post;
 }

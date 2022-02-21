@@ -7,13 +7,14 @@ interface IProps {
   Width?: string;
   Alt?: string;
 }
-export default function AppImage({ Height, Url, Width }: IProps) {
+export default function AppImage({ Height, Url, Width, Alt }: IProps) {
   return (
     <Image
       src={Url}
       height={Height}
       width={Width}
       className={Styles.Image}
+      alt={Alt}
     ></Image>
   );
 }

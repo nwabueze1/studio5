@@ -1,10 +1,8 @@
 import Notifications from "@mui/icons-material/Notifications";
 import Badge from "@mui/material/Badge";
-
 import Stack from "@mui/material/Stack";
 import React from "react";
-import { useTheme, useMediaQuery, } from "@mui/material";
-import Button  from "@mui/material/Button ";
+import { useTheme, useMediaQuery } from "@mui/material";
 import { NAVIGATIONLINKS } from "./NavigationLinks";
 import AppDrawer from "./AppDrawer";
 import Link from "next/link";
@@ -22,13 +20,25 @@ export default function NavItem() {
         </Stack>
       ) : (
         <>
-          <Link href={NAVIGATIONLINKS.HOME}>Home</Link>
-          <Link href={NAVIGATIONLINKS.PRINT}>Print</Link>
-          <Link href={NAVIGATIONLINKS.COVERAGE}>Coverage</Link>
-          <Link href={NAVIGATIONLINKS.VIDEOBOOKING}>VideoCoverage</Link>
-          <Link href={NAVIGATIONLINKS.BLOG}>Blog</Link>
-          <Link href={NAVIGATIONLINKS.ACCOUNT}>Account</Link>
-          <Link href={NAVIGATIONLINKS.NOTIFICATION}>
+          <Link href={NAVIGATIONLINKS.HOME} passHref>
+            Home
+          </Link>
+          <Link href={NAVIGATIONLINKS.PRINT} passHref>
+            Print
+          </Link>
+          <Link href={NAVIGATIONLINKS.COVERAGE} passHref>
+            Coverage
+          </Link>
+          <Link href={NAVIGATIONLINKS.VIDEOBOOKING} passHref>
+            VideoCoverage
+          </Link>
+          <Link href={NAVIGATIONLINKS.BLOG} passHref>
+            Blog
+          </Link>
+          <Link href={NAVIGATIONLINKS.ACCOUNT} passHref>
+            Account
+          </Link>
+          <Link href={NAVIGATIONLINKS.NOTIFICATION} passHref>
             <Badge badgeContent={4} color="error">
               <Notifications></Notifications>
             </Badge>
