@@ -31,13 +31,7 @@ export default function AppDrawer() {
           <ListItem
             sx={{ backgroundColor: "rgba(0,0,0,0.4)", height: "150px" }}
           ></ListItem>
-          <AppListItem
-            Href={NAVIGATIONLINKS.HOME}
-            ListIcon={<Home></Home>}
-            OnClick={handleClick}
-          >
-            Home
-          </AppListItem>
+
           <AppListItem
             Href={NAVIGATIONLINKS.PRINT}
             ListIcon={<Print></Print>}
