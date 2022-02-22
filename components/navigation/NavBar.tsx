@@ -11,7 +11,7 @@ export default function NavBar() {
     <AppBar position="sticky" color="inherit">
       <Toolbar>
         <VideoCameraBack fontSize="large"></VideoCameraBack>
-        <Typography variant="h6" component="div" sx={{ flexGrow: "1" }}>
+        <Typography variant="h5" sx={{ flexGrow: "1" }} fontWeight="bolder">
           Studio 5
         </Typography>
         <NavItem></NavItem>

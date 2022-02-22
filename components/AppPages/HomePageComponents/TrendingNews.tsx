@@ -5,8 +5,9 @@ import Divider from "@mui/material/Divider";
 import { Blog } from "./Home.Service";
 import Typography from "@mui/material/Typography";
 import List from "@mui/material/List";
-import { IsMobile } from "./HOOKQUERY";
+import { IsMobile, UseTheme } from "./HOOKQUERY";
 import Link from "next/link";
+import Stack from "@mui/material/Stack";
 
 interface Iprop {
   blogs: Blog[];
@@ -14,49 +15,72 @@ interface Iprop {
 export default function TrendingNews({ blogs }: Iprop) {
   return (
     <React.Fragment>
-      <RoundedHeading>Trending News</RoundedHeading>
+      <RoundedHeading>latest news</RoundedHeading>
+
       <List sx={{ mt: 0 }}>
         {blogs.map((blog, index) => (
-          <ListItem key={index}>
-            <Link href={`/blogs/${blog.id}`}>
-              <ListItemText
-                sx={{
-                  ":hover": {
-                    cursor: "pointer",
-                    textDecoration: "underline",
-                  },
-                  transition: " textDecoration 2s",
-                  width: 900,
-                }}
-                key={index}
-                primary={blog.title}
-                secondary={blog.body}
-              ></ListItemText>
-            </Link>
-            <Divider></Divider>
-          </ListItem>
+          <RenderTrendingNews
+            title={blog.title}
+            id={blog.id}
+            key={index}
+            author={blog.author}
+            body={blog.body}
+            datePosted={blog.datePosted}
+          />
         ))}
       </List>
     </React.Fragment>
   );
 }
 
+const RenderTrendingNews = (prop: Blog) => {
+  return (
+    <Link href={`/blogs/${prop.id}`} >
+      <Stack direction={"column"} sx={{":hover":{cursor:"pointer"}}}>
+        <Typography
+          variant="subtitle1"
+          fontWeight={600}
+          pt={1}
+          lineHeight={1.19}
+        >
+          {prop.title}
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          fontWeight="200"
+          color="ButtonShadow"
+          lineHeight={1.19}
+          maxWidth={"50ch"}
+          textOverflow="ellipsis"
+          noWrap
+          sx={{ lineClamp: 2 }}
+        >
+          {prop.body}
+        </Typography>
+        <Stack gap={5} direction="row">
+          <Typography variant="subtitle2" color="gray">
+            {prop.datePosted}
+          </Typography>
+          <Typography variant="subtitle2" color="gray">
+            by - {prop.author}
+          </Typography>
+        </Stack>
+      </Stack>
+    </Link>
+  );
+};
 interface IRoundedHeading {
   children: ReactChild;
+  mt?: number;
 }
-export const RoundedHeading = ({ children }: IRoundedHeading) => {
+export const RoundedHeading = ({ children, mt }: IRoundedHeading) => {
   return (
     <Typography
-      variant={IsMobile() ? "h4" : "h2"}
-      component="h6"
-      textAlign={IsMobile() ? "center" : "left"}
-      mt={4}
-      mb={2}
-      color="white"
-      p={IsMobile() ? 1 : 5}
-      bgcolor="navy"
-      borderRadius={IsMobile() ? 20 : 15}
-      maxWidth={IsMobile() ? 480 : 600}
+      variant={IsMobile() ? "h6" : "h2"}
+      mt={mt ? mt : 4}
+      color="ButtonText"
+      fontWeight={"bolder"}
+      textTransform={"uppercase"}
     >
       {children}
     </Typography>

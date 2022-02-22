@@ -1,127 +1,71 @@
-import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
-import React, { ReactChild, ReactChildren } from "react";
 import Stack from "@mui/material/Stack";
-import Paper from "@mui/material/Paper";
-import Camera from "@mui/icons-material/Camera";
-import LocationCity from "@mui/icons-material/LocationOn";
-import Phone from "@mui/icons-material/Call";
-import { styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import { IsMobile } from "../AppPages/HomePageComponents/HOOKQUERY";
+import Typography from "@mui/material/Typography";
+import React from "react";
 
-const Item = styled(Box)(({ theme }) => ({
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  color: theme.palette.text.primary,
-}));
-
-enum TEXTCOLOR {
-  WHITE = "white",
-  YELLOW = "yellow",
-}
 export default function AppFooter() {
+  const [officedays] = React.useState<string[]>([
+    "Monday: 7am-6pm,Tuesday: 7am-6pm,Wednesday: 7am-6pm,Thursday: 7am-6pm,Friday: 7am-6pm, Saturday: 9am - 5pm",
+  ]);
   return (
-    <Paper sx={{ bgcolor: "black" }}>
-      <Box sx={{ width: "100%", px: "2rem", pt: "0.5rem" }}>
-        <Grid
-          container
-          spacing={1}
-          justifyContent="center"
-          alignItems="center"
-          direction="row"
-        >
-          {!IsMobile() && (
-            <AppGridItem>
-              <Stack
-                direction="row"
-                textAlign="center"
-                color={TEXTCOLOR.YELLOW}
-              >
-                <Camera fontSize="large"></Camera>
-                <Typography variant="h6" component="span">
-                  POWERED BY STUDIO 5
-                </Typography>
-              </Stack>
-            </AppGridItem>
-          )}
-          <AppGridItem>
-            <Typography variant="h5" component="div" color={TEXTCOLOR.YELLOW}>
-              Our Branches <LocationCity></LocationCity>
-            </Typography>
-            <Stack direction="column" color={TEXTCOLOR.WHITE}>
-              <Typography variant="body1">
-                Asaba @ No 03 Benjamib Street Iselleuku
-              </Typography>
-              <Typography variant="body1">
-                Onitsha @ No 13 New Market Road Opp. Church Road
-              </Typography>
-              <Typography variant="body1" component="div">
-                Awka @ Rev Avenue, Governors Lodge
-              </Typography>
-              <Typography variant="body1" component="div">
-                Agulu @ Nwagu, Opp. St Anthony School, Agulu
-              </Typography>
-            </Stack>
-          </AppGridItem>
-          <AppGridItem>
-            <Typography variant="h6" component="div" color={TEXTCOLOR.YELLOW}>
-              Contact US <Phone></Phone>
-            </Typography>
-            <Stack direction="column" color={TEXTCOLOR.WHITE}>
-              <Typography variant="body1" component="div">
-                +2349087546
-              </Typography>
-              <Typography variant="body2">+2349087546</Typography>
-              <Typography variant="body2">Email: mediaHub@gmail.com</Typography>
-              <Typography variant="body2">info@ymail.com</Typography>
-              <Typography variant="body2">
-                Office Hours: Mon-Sat : 07:00-20:00
-              </Typography>
-            </Stack>
-          </AppGridItem>
-          <AppGridItem>
-            <Typography variant="h6" component="div" color={TEXTCOLOR.YELLOW}>
-              About US
-            </Typography>
-            <Stack direction="column" color={TEXTCOLOR.WHITE}>
-              <Typography
-                variant="body2"
-                component="a"
-                href="mailto://heros@gmail.com"
-              >
-                Send Us Mail
-              </Typography>
-              <Typography variant="body2">Item 2</Typography>
-              <Typography variant="body2">Item 2</Typography>
-              <Typography variant="body2">Item 2</Typography>
-              <Typography variant="body2">Item 2</Typography>
-            </Stack>
-          </AppGridItem>
-        </Grid>
-      </Box>
-      <Typography
-        variant="body1"
-        component="div"
-        color="gold"
-        textAlign="center"
+    <footer style={{ backgroundColor: "black" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          flexWrap: "wrap",
+          padding: "10px",
+        }}
       >
-        studio5.com &copy;2022
-      </Typography>
-    </Paper>
+        <Stack maxWidth={"30ch"} color={"white"}>
+          <Typography variant="subtitle1" fontWeight={"bolder"} color="gold">
+            Office Days and Time
+          </Typography>
+          <Typography variant="body2">Monday: 7am - 6pm</Typography>
+          <Typography variant="body2">Monday: 7am - 6pm </Typography>
+          <Typography variant="body2">Tuesday: 7am - 6pm </Typography>
+          <Typography variant="body2">Wedne: 7am - 6pm </Typography>
+          <Typography variant="body2">Monday: 7am - 6pm </Typography>
+        </Stack>
+        <Stack color={"white"} width={"30ch"}>
+          <Typography variant="subtitle1" fontWeight={"bolder"} color="gold">
+            Our Branches
+          </Typography>
+          <Typography variant="body2">
+            Awka: @ Opposite Governosr lodge
+          </Typography>
+          <Typography variant="body2" lineHeight={1}>
+            Agulu @ Opposite St. Anthony Catholic Comprehensive Institute Agulu.
+          </Typography>
+          <Typography variant="body2">
+            Asaba @Ogwashi Ukwu Isele Azagba
+          </Typography>
+          <Typography variant="body2">
+            Onitsha @ No 30 Benjamin Street Onitsha
+          </Typography>
+        </Stack>
+        <Stack color={"white"} maxWidth={"30ch"}>
+          <Typography variant="subtitle1" fontWeight={"bolder"} color="gold">
+            Contact Info
+          </Typography>
+          <Typography variant="body2">Manager - 08038219501</Typography>
+          <Typography variant="body2">Email: Studio5@mail.com </Typography>
+          <Typography variant="body2">Customer Care - 08038219501 </Typography>
+        </Stack>
+        <Stack color={"white"} width={"30ch"}>
+          <Typography variant="subtitle1" fontWeight={"bolder"} color="gold">
+            About
+          </Typography>
+          <Typography variant="body2">FAQ</Typography>
+          <Typography variant="body2">About Us</Typography>
+          <Typography variant="body2">Who are We </Typography>
+        </Stack>
+      </div>
+
+      <div>
+        <Typography color="gold" textAlign={"center"}>
+          Powered by Studio 5 &copy; 2022
+        </Typography>
+      </div>
+    </footer>
   );
 }
-
-export interface IAppGridItem {
-  children:
-    | ReactChild
-    | ReactChildren
-    | ReactChild[]
-    | ReactChildren[]
-    | string;
-}
-const AppGridItem = ({ children }: IAppGridItem) => (
-  <Grid item xs={12} sm={6} md={3} lg={3}>
-    <Item>{children}</Item>
-  </Grid>
-);

@@ -1,7 +1,6 @@
 import React from "react";
 import type { GetStaticProps, NextPage, InferGetStaticPropsType } from "next";
 import Head from "next/head";
-import AppFooter from "../components/footer/AppFooter";
 import HomePage from "../components/AppPages/HomePage";
 import {
   getAllBlog,

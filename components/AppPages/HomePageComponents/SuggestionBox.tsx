@@ -4,73 +4,61 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import React from "react";
 import AppImage from "../../AppImage/AppImage";
-import { UseTheme } from "./HOOKQUERY";
+import { IsMobile, UseTheme } from "./HOOKQUERY";
 import SuggestionImage from "../../../public/assets/Images/5bbc22957f7ed-a3e785ac2f2995060351779dfa72e084 (1).webp";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Send from "@mui/icons-material/Send";
+import { RoundedHeading } from "./TrendingNews";
+import CircularProgress from "@mui/material/CircularProgress";
+import Stack from "@mui/material/Stack";
 
 export default function SuggestionBox() {
+  const [loading, setLoading] = React.useState<boolean>(false);
+  const mobile = IsMobile();
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    console.log(e.currentTarget);
+    setLoading(false);
+  }
   return (
-    <Box
-      sx={{
+    <form
+      style={{
+        padding: "20px",
         display: "flex",
         justifyContent: "center",
-        mt: UseTheme().spacing(4),
+        alignItems: "center",
+        maxWidth: "500px",
+        borderRadius: "5px",
       }}
     >
-      <Card
-        sx={{
-          maxWidth: "900px",
-          boxShadow: UseTheme().shadows[15],
-          p: "2rem",
-          pb: 0,
-        }}
-      >
+      <Stack gap={2} width={"50ch"}>
         <Typography
-          variant="h6"
-          textAlign="center"
-          color="inherit"
-          textTransform="capitalize"
-          sx={{ mb: "1rem" }}
+          variant="subtitle1"
+          fontWeight={"bolder"}
+          textTransform="uppercase"
         >
-          How Can We Serve you better?
+          Contact us
         </Typography>
-        <Grid container justifyContent="center">
-          <Grid item xs={12} sm={6}>
-            <AppImage
-              Url={SuggestionImage}
-              Height="400"
-              Width="400"
-              Alt="image of a happy woman"
-            ></AppImage>
-          </Grid>
-          <Grid item xs={12} sm={6} padding={3}>
-            <Box component="form">
-              <TextField
-                placeholder="enter your email"
-                required
-                type="email"
-                label="Your Email"
-                margin="normal"
-              ></TextField>
-              <TextField
-                multiline
-                placeholder="send us message"
-                required
-                type="text"
-                label="Message"
-                rows={5}
-                margin="normal"
-              ></TextField>
-              <br />
-              <Button type="submit" endIcon={<Send></Send>} variant="outlined">
-                Send
-              </Button>
-            </Box>
-          </Grid>
-        </Grid>
-      </Card>
-    </Box>
+        <TextField type={"emai"} label={"Email"} required></TextField>
+        <TextField
+          multiline
+          type={"text"}
+          label="message"
+          required
+          rows={3}
+        ></TextField>
+
+        <Button
+          type="submit"
+          variant="contained"
+          endIcon={
+            loading ? <CircularProgress></CircularProgress> : <Send></Send>
+          }
+        >
+          Submit
+        </Button>
+      </Stack>
+    </form>
   );
 }

@@ -12,31 +12,28 @@ import TrendingNews, {
   RoundedHeading,
 } from "./HomePageComponents/TrendingNews";
 import { Blog } from "./HomePageComponents/Home.Service";
+import UpcomingEvents from "./HomePageComponents/UpcomingEvents";
+import OurPatners from "./HomePageComponents/OurPatners";
+import DroneService from "./HomePageComponents/DroneService";
+import BeOurCameraMan from "./HomePageComponents/BeOurCameraMan";
 interface Iprop {
   blog: Blog[];
 }
 export default function HomePage({ blog }: Iprop) {
+  const [blogs] = React.useState<Blog[]>(blog);
   return (
     <Box sx={{ p: UseTheme().spacing(3) }}>
       <BannerSection></BannerSection>
-      <RoundedHeading>What Do We Offer ?</RoundedHeading>
-
       <WhatWeDoSection></WhatWeDoSection>
-      <TrendingNews blogs={blog}></TrendingNews>
+      <DroneService></DroneService>
+      <BeOurCameraMan></BeOurCameraMan>
       <CareerInModelling></CareerInModelling>
+      <TrendingNews blogs={blogs}></TrendingNews>
+      <UpcomingEvents></UpcomingEvents>
       <TestMonial></TestMonial>
-
-      <SuggestionBox></SuggestionBox>
-      <Typography
-        variant={IsMobile() ? "h4" : "h2"}
-        fontWeight={"800"}
-        color="navy"
-        textAlign={IsMobile() ? "center" : "left"}
-        sx={{ mt: UseTheme().spacing(5) }}
-      >
-        Our Social Media Platforms
-      </Typography>
+      <OurPatners></OurPatners>
       <OurSocialMediaPlaforms></OurSocialMediaPlaforms>
+      <SuggestionBox></SuggestionBox>
     </Box>
   );
 }
