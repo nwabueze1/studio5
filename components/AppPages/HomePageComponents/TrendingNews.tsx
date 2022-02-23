@@ -35,8 +35,8 @@ export default function TrendingNews({ blogs }: Iprop) {
 
 const RenderTrendingNews = (prop: Blog) => {
   return (
-    <Link href={`/blogs/${prop.id}`} >
-      <Stack direction={"column"} sx={{":hover":{cursor:"pointer"}}}>
+    <Link href={`/blogs/${prop.id}`}>
+      <Stack direction={"column"} sx={{ ":hover": { cursor: "pointer" } }}>
         <Typography
           variant="subtitle1"
           fontWeight={600}
@@ -78,7 +78,7 @@ export const RoundedHeading = ({ children, mt }: IRoundedHeading) => {
     <Typography
       variant={IsMobile() ? "h6" : "h2"}
       mt={mt ? mt : 4}
-      color="ButtonText"
+      color="navy"
       fontWeight={"bolder"}
       textTransform={"uppercase"}
     >

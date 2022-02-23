@@ -61,23 +61,22 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-    <Box sx={{ maxWidth: 700, flexGrow: 1 }}>
+    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
       <Paper
         square
         elevation={0}
         sx={{
           display: "flex",
-
+          alignItems: "center",
           bgcolor: "background.default",
+          pl: 2,
+          height: 50,
         }}
       >
         <Stack direction={"row"} spacing={5}>
-          <Typography variant="h5" component={"span"}>
+          <Typography variant="h5" component={"span"} color="primary">
             {images[activeStep].tag}
           </Typography>
-          <Button endIcon={<ChevronRight fontSize="large"></ChevronRight>}>
-            See More
-          </Button>
         </Stack>
         {/* <Typography>{images[activeStep].label}</Typography> */}
       </Paper>
