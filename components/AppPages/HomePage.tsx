@@ -16,6 +16,7 @@ import UpcomingEvents from "./HomePageComponents/UpcomingEvents";
 import OurPatners from "./HomePageComponents/OurPatners";
 import DroneService from "./HomePageComponents/DroneService";
 import BeOurCameraMan from "./HomePageComponents/BeOurCameraMan";
+import CarouselSection from "./HomePageComponents/CarouselSection";
 interface Iprop {
   blog: Blog[];
 }
@@ -23,6 +24,7 @@ export default function HomePage({ blog }: Iprop) {
   const [blogs] = React.useState<Blog[]>(blog);
   return (
     <Box sx={{ p: UseTheme().spacing(3) }}>
+      <CarouselSection></CarouselSection>
       <BannerSection></BannerSection>
       <WhatWeDoSection></WhatWeDoSection>
       <DroneService></DroneService>
