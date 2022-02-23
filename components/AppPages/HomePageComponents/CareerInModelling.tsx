@@ -43,8 +43,8 @@ export default function CareerInModelling() {
               lineHeight={1.18}
               color={"ThreeDShadow"}
             >
-              Come Let's train you to become a professional model with our team
-              of Experts
+              Come Let&apos;s train you to become a professional model with our
+              team of Experts
             </Typography>
           </ListItem>
           <ListItem divider sx={{ pl: 0 }}>

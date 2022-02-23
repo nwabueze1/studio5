@@ -1,6 +1,7 @@
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import React from "react";
+import React, { ReactChild, ReactChildren } from "react";
+import { Interface } from "readline";
 
 export default function AppFooter() {
   const [officedays] = React.useState<string[]>([
@@ -68,4 +69,14 @@ export default function AppFooter() {
       </div>
     </footer>
   );
+}
+
+export interface IAppGridItem {
+  children:
+    | ReactChild
+    | ReactChildren
+    | ReactChild[]
+    | ReactChildren[]
+    | false
+    | Element;
 }

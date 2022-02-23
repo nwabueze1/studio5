@@ -14,9 +14,7 @@ const BannerSection = () => {
     <Grid container justifyContent="center" alignItems="center">
       <AppGridItem>
         <RoundedHeading>Revolution In Printing</RoundedHeading>
-        {/* <Typography variant={isMobile ? "h4" : "h1"} fontWeight="bold">
-         
-        </Typography> */}
+
         <Typography fontWeight="bold" color="Background" variant="subtitle1">
           Powered by Studio 5
         </Typography>

@@ -24,7 +24,8 @@ export default function HomePage({ blog }: Iprop) {
   const [blogs] = React.useState<Blog[]>(blog);
   return (
     <Box sx={{ p: UseTheme().spacing(3) }}>
-      <CarouselSection></CarouselSection>
+      {IsMobile() && <CarouselSection></CarouselSection>}
+
       <BannerSection></BannerSection>
       <WhatWeDoSection></WhatWeDoSection>
       <DroneService></DroneService>
